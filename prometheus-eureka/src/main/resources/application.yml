@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: prometheus-eureka-adapter
+
+custom:
+  eureka:
+    url: http://localhost:9001 #eureka的地址
+  file:
+    path: ./eureka-sd.json #生成的配置文件地址
