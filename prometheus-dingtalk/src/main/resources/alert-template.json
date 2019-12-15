@@ -1,0 +1,59 @@
+{
+  "receiver": "web\\.hook",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "JvmInstanceDown",
+        "app": "OAUTH2-SERVER",
+        "host": "192.168.0.187",
+        "instance": "139.9.168.137:8000",
+        "instanceId": "ceafdf22bcfb:oauth2-server:8000",
+        "job": "eureka-sd",
+        "severity": "page"
+      },
+      "annotations": {
+        "description": "139.9.168.137:8000 of job eureka-sd has been down for more than 30 seconds.",
+        "summary": "实例 139.9.168.137:8000 下线"
+      },
+      "startsAt": "2019-12-11T20:59:15.628586008+08:00",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://cqxdeMacBook-Pro.local:9090/graph?g0.expr=up+%3D%3D+0\u0026g0.tab=1",
+      "fingerprint": "d02f43a110d5e537"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "JvmInstanceDown",
+        "app": "SERVICE-SQLQUERY",
+        "host": "192.168.0.187",
+        "instance": "139.9.168.137:8012",
+        "instanceId": "192.168.0.187:service-sqlquery:8012",
+        "job": "eureka-sd",
+        "severity": "page"
+      },
+      "annotations": {
+        "description": "139.9.168.137:8012 of job eureka-sd has been down for more than 30 seconds.",
+        "summary": "实例 139.9.168.137:8012 下线"
+      },
+      "startsAt": "2019-12-11T20:59:15.628586008+08:00",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://cqxdeMacBook-Pro.local:9090/graph?g0.expr=up+%3D%3D+0\u0026g0.tab=1",
+      "fingerprint": "a16f5e0994776e96"
+    }
+  ],
+  "groupLabels": {
+    "alertname": "JvmInstanceDown"
+  },
+  "commonLabels": {
+    "alertname": "JvmInstanceDown",
+    "host": "192.168.0.187",
+    "job": "eureka-sd",
+    "severity": "page"
+  },
+  "commonAnnotations": {},
+  "externalURL": "http://cqxdeMacBook-Pro.local:9093",
+  "version": "4",
+  "groupKey": "{}:{alertname=\"JvmInstanceDown\"}"
+}
