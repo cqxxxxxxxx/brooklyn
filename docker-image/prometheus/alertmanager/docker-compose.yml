@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  alertmenager:
+    image: cqx/alertmanager:latest
+    container_name: cqx-alertmanager
+    networks:
+    - cqx-net
+    environment:
+      NODE_TYPE: MASTER
+    volumes:
+    - ./conf:/alertmanager/conf
+    ports:
+    - 9093:9093
+
+networks:
+  cqx-net:
+    external: true

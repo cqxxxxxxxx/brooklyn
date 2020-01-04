@@ -1,0 +1,103 @@
+[
+  {
+    "targets": [
+      "139.9.168.137:8022"
+    ],
+    "labels": {
+      "app": "MONITOR-ADMIN",
+      "host": "192.168.0.187",
+      "instanceId": "6b60832e7dce:monitor-admin:8022"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8071"
+    ],
+    "labels": {
+      "app": "BUS-SERVER",
+      "host": "192.168.0.187",
+      "instanceId": "36ea71b47494:bus-server:8071",
+      "__metrics_path__": "/BUS-SERVER//actuator/prometheus"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8445"
+    ],
+    "labels": {
+      "app": "GATEWAY-ADMIN",
+      "host": "192.168.0.187",
+      "instanceId": "870618c8be82:gateway-admin:8445"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8761"
+    ],
+    "labels": {
+      "app": "EUREKA-SERVER",
+      "host": "192.168.0.187",
+      "instanceId": "9c0cf0c8a21c:eureka-server:8761"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8014"
+    ],
+    "labels": {
+      "app": "SERVICE-SQL",
+      "host": "192.168.0.187",
+      "instanceId": "192.168.0.187:service-sql:8014"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8010"
+    ],
+    "labels": {
+      "app": "SERVICE-USER",
+      "host": "192.168.0.187",
+      "instanceId": "93a2c6aafb16:service-user:8010"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8443"
+    ],
+    "labels": {
+      "app": "BOP-GATEWAY-WEB",
+      "host": "192.168.0.187",
+      "instanceId": "066e0ea54bd4:bop-gateway-web:8443"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8011"
+    ],
+    "labels": {
+      "app": "SERVICE-DATAMANAGE",
+      "host": "192.168.0.187",
+      "instanceId": "ab775ffa11d3:service-datamanage:8011"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:11000"
+    ],
+    "labels": {
+      "app": "FRONTEND-ADMIN",
+      "host": "192.168.0.187",
+      "instanceId": "f29ec0e738f3:frontend-admin:11000"
+    }
+  },
+  {
+    "targets": [
+      "139.9.168.137:8000"
+    ],
+    "labels": {
+      "app": "OAUTH2-SERVER",
+      "host": "192.168.0.187",
+      "instanceId": "ceafdf22bcfb:oauth2-server:8000"
+    }
+  }
+]

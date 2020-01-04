@@ -1,0 +1,19 @@
+groups:
+#- name: docker_custom_variables
+#  rules:
+#  - record: custom_container_memory_usage_mb  ##内存使用量mb单位
+#    expr: container_memory_usage_bytes/1048576
+#  - record: custom_container_memory_grows_mb_5m ##内存在5分钟内增长量mb单位
+#    expr: sum(increase(container_memory_usage_bytes[5m])) by (name)
+- name: jvm_custom_variables
+  rules:
+  - record: custom_jvm_memory_usage_mb
+    expr: sum(jvm_memory_used_bytes) by (instance) / 1048576
+  - alert: JvmInstanceDown
+    expr: up == 0
+    for: 30s
+    labels:
+      severity: page
+    annotations:
+      summary: "Instance {{ $labels.instance }} go down"
+      description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 30 seconds."

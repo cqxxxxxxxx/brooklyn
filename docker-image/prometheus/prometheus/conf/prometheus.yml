@@ -1,0 +1,33 @@
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - localhost:9093
+      labels:
+        name: cqxxxxxxxx
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+- 'prometheus.rules.yml'
+
+
+# A scrape configuration containing exactly one endpoint to scrape:
+scrape_configs:
+- job_name:     'eureka-sd'
+  scrape_interval: 10s
+  metrics_path: '/actuator/prometheus'
+  file_sd_configs:
+  - files:
+    - /Users/cqx/Projects/brooklyn/eureka-sd.json
+    refresh_interval: 10s
+  #  basic_auth:
+  #    username: admin
+  #    password: 123456
+  bearer_token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMTAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJyZWFkIl0sImV4cCI6MTU3ODE5NTg4NywiYXV0aG9yaXRpZXMiOlsiYWRtaW4iXSwianRpIjoiZDFjZmExOGQtNmI1MC00ZGQ1LTg5MTAtZjRjODAzZjQ5NTRmIiwiY2xpZW50X2lkIjoidGVzdF9jbGllbnQiLCJ1c2VybmFtZSI6ImFkbWluIn0.U8_rODMJzS9f0YrZGkbbFJLbV990CdBDP9TVnHybOB0
