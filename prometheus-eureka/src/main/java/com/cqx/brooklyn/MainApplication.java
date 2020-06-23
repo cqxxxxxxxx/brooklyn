@@ -69,10 +69,11 @@ public class MainApplication {
                 labels.put("app", instance.getApp());
                 labels.put("host", instance.getHostName());
                 labels.put("instanceId", instance.getInstanceId());
+//                labels.put("__metrics_path__", "/" + instance.getApp() + "/actuator/prometheus");
                 staticConfig.setLabels(labels);
             }
-            List<String> targets = instances.stream().map(y -> "139.9.168.137:" + y.getPort().get("$")).collect(Collectors.toList());
-//            List<String> targets = instances.stream().map(y -> y.getIpAddr() + ":" + y.getPort().get("$")).collect(Collectors.toList());
+//            List<String> targets = instances.stream().map(y -> "139.9.168.137:" + y.getPort().get("$")).collect(Collectors.toList());
+            List<String> targets = instances.stream().map(y -> y.getIpAddr() + ":" + y.getPort().get("$")).collect(Collectors.toList());
             staticConfig.setTargets(targets);
             return staticConfig;
         };

@@ -9,10 +9,12 @@ services:
     environment:
       NODE_TYPE: MASTER
     volumes:
-    - ./conf:/prometheus/conf
+      - ./conf:/prometheus/conf
     ports:
-    - 9090:9090
+      - 9090:9090
 
 networks:
   cqx-net:
     external: true
+
+

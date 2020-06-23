@@ -1,9 +1,10 @@
 spring:
   application:
     name: prometheus-eureka-adapter
-
 custom:
   eureka:
     url: http://139.9.168.137:8761/ #eureka的地址
   file:
     path: ./eureka-sd.json #生成的配置文件地址
+server:
+  port: 9091
