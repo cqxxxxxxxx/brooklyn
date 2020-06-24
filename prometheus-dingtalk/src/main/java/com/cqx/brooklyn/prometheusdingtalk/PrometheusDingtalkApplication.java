@@ -41,7 +41,7 @@ public class PrometheusDingtalkApplication {
 
     private static ObjectMapper objectMapper = new ObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-    private String markdownTemplate = "### ${/commonLabels/alertname}服务:[${/commonLabels/service}]\n实例:[${/commonLabels/instance}]\n接口:";
+    private String markdownTemplate = "### ${/commonLabels/alertname}\b\b\n>\b服务:[${/commonLabels/service}]\b\b\n实例:[${/commonLabels/instance}]\b\b\n接口:\b\b\n";
 
     @PostMapping("/post-alert")
     public void alertGate(@RequestBody String json) {
@@ -56,16 +56,17 @@ public class PrometheusDingtalkApplication {
             for (JsonNode alert : alerts) {
                 JsonNode at = alert.at("/annotations/summary");
                 String summary = at.textValue();
-                s += "> " + summary + "\n";
+                s += summary + "\b\b\n";
             }
             markdown.setText(s);
             dingTalkModel.setMarkdown(markdown);
             dingTalkModel.setMsgtype("markdown");
-            webClient.post()
+            String block = webClient.post()
                     .contentType(MediaType.APPLICATION_JSON)
                     .bodyValue(dingTalkModel)
                     .retrieve()
-                    .bodyToMono(Void.class);
+                    .bodyToMono(String.class).block();
+            log.debug(block);
         } catch (JsonProcessingException e) {
             log.error(e.getMessage(), e);
         }
