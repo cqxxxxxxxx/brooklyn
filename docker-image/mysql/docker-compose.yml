@@ -1,0 +1,18 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    restart: always
+    network_mode: host
+    volumes:
+      - ./myconf:/etc/mysql/conf.d
+      - ./mydata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+
+  adminer:
+    image: adminer
+    restart: always
+    network_mode: host
+    ports:
+      - 8080:8080

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.1
+    container_name: kibana_example
+    restart: always
+    network_mode: host
+    volumes:
+      - ./myconf/kibana.yml:/usr/share/kibana/config/kibana.yml
+#      - ./mydata:/var/lib/mysql
+#    environment:
+#      SERVER_NAME: kibana.example.org
+#      ELASTICSEARCH_HOSTS: http://elasticsearch.example.org
