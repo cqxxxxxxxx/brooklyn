@@ -5,5 +5,3 @@ server:
   port: 5001
 dt:
   url: "https://oapi.dingtalk.com/robot/send?access_token=7802cfe162d2adf2ad1a45a8ecba5b7f6a437df4dd92fcd226bf8d0081fdd956"
-
-
