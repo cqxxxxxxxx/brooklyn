@@ -1,10 +1,7 @@
 package com.cqx.brooklyn.util;
 
 import com.cqx.brooklyn.Environment;
-import com.cqx.brooklyn.command.Command;
-import com.cqx.brooklyn.command.EchoCommand;
-import com.cqx.brooklyn.command.MockCommand;
-import com.cqx.brooklyn.command.OOMCommand;
+import com.cqx.brooklyn.command.*;
 
 import java.util.ServiceLoader;
 
@@ -27,6 +24,7 @@ public class CommandProvider {
         environment.addCommand(new EchoCommand());
         environment.addCommand(new OOMCommand());
         environment.addCommand(new MockCommand());
+        environment.addCommand(new ZeroWindowMockCommand());
     }
 
     public static void reload() {

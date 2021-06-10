@@ -45,12 +45,15 @@ public class HttpServer {
                                 .addLast("decoder", new HttpRequestDecoder())
                                 .addLast("encoder", new HttpResponseEncoder())
                                 .addLast("aggregator", new HttpObjectAggregator(512 * 1024))
+//                                .addLast("aggregator", new HttpObjectAggregator(Integer.MAX_VALUE))
                                 .addLast("command", new CommandHandler());
                     }
                 })
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
+//                .option(ChannelOption.SO_RCVBUF, 10)
+//                .option(ChannelOption.SO_SNDBUF, 10)
                 .option(ChannelOption.SO_BACKLOG, 128);
-        ChannelFuture f = b.bind("127.0.0.1", 9000);
+        ChannelFuture f = b.bind(9000);
         f.sync();
     }
 
