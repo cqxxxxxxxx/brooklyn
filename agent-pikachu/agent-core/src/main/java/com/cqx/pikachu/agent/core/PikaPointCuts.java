@@ -13,8 +13,16 @@ public class PikaPointCuts {
 
     private static Set<PikaPointCut> cuts = new HashSet<PikaPointCut>();
 
-    public static void init() {
+    static {
+        init();
+    }
 
+    public static void init() {
+        PikaPointCut pikaPointCut = new PikaPointCut();
+        pikaPointCut.setClassName("com.cqx.agent.pikcahu.example.Hello");
+        cuts.add(
+                pikaPointCut
+        );
     }
 
     public static Optional<PikaPointCut> tryGet(String className) {

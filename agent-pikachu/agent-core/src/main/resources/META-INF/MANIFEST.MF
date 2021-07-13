@@ -1,0 +1,4 @@
+Premain-class: com.cqx.pikachu.agent.core.PikaPremain
+Agent-Class: com.cqx.pikachu.agent.core.PikaAgentmain
+Can-Retransform-Classes: true
+Can-Redefine-Classes: true

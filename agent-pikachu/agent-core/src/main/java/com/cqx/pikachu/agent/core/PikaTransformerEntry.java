@@ -27,7 +27,7 @@ public class PikaTransformerEntry implements ClassFileTransformer {
         Optional<PikaPointCut> pointCutOpt = PikaPointCuts.tryGet(clazzName);
         if (pointCutOpt.isPresent()) {
             PikaPointCut pikaPointCut = pointCutOpt.get();
-            PikaCtHolder pikaCtHolder = new PikaCtHolder(className);
+            PikaCtHolder pikaCtHolder = new PikaCtHolder(clazzName);
             PikaPlugins.doPlugin(pikaCtHolder);
             return pikaCtHolder.toBytes();
         }

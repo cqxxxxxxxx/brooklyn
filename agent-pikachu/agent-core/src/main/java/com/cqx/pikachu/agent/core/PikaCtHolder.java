@@ -18,6 +18,18 @@ public class PikaCtHolder {
 
     private CtClass ctClass;
 
+    public String getClassName() {
+        return className;
+    }
+
+    public ClassPool getPool() {
+        return pool;
+    }
+
+    public CtClass getCtClass() {
+        return ctClass;
+    }
+
     public PikaCtHolder(String className) {
         this.className = className;
         this.pool = ClassPool.getDefault();
